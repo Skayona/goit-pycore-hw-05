@@ -28,12 +28,7 @@ def sum_profit(text: str, func: Callable[[str], Generator[float, None, None]]) -
   Returns:
       float: total sum of all extracted numbers
     """
-  total_income = 0
-
-  for number in func(text):
-    total_income += number
-
-  return total_income
+  return sum(func(text), 0.0)
 
 
 text = "Загальний дохід працівника складається з декількох частин: 1000.01 як основний дохід, доповнений додатковими надходженнями 27.45 і 324.00 доларів."
